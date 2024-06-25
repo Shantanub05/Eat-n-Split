@@ -20,8 +20,8 @@ const initialFriends = [
     balance: 0,
   },
 ];
-const FriendsList = () => {
-    const friends = initialFriends;
+const FriendsList = ({friends}) => {
+   
   return (
     <div>
       <ul>{friends.map((friend)=><Friend friend={friend} key={friend.id}/>)}</ul>
