@@ -1,9 +1,12 @@
 import React from 'react'
 import Button from './Button';
 
-const Friend = ({friend}) => {
+const Friend = ({friend,onSelect,selectFriend}) => {
+
+  const isSelected = selectFriend?.id === friend.id;
+
   return (
-    <div className="sidebar">
+    <div className={isSelected ? "selected":""}>
       <li>
         <img src={friend.image} alt={friend.name} />
         <h3>{friend.name}</h3>
@@ -22,7 +25,7 @@ const Friend = ({friend}) => {
            No dues
           </p>
         )}
-        <Button >Select</Button>
+        <Button onClick={()=>onSelect(friend)} >{isSelected? 'Close' :"Select"}</Button>
       </li>
     </div>
   );

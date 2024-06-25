@@ -20,11 +20,11 @@ const initialFriends = [
     balance: 0,
   },
 ];
-const FriendsList = ({friends}) => {
+const FriendsList = ({friends,onSelectFriend,selectFriend}) => {
    
   return (
     <div>
-      <ul>{friends.map((friend)=><Friend friend={friend} key={friend.id}/>)}</ul>
+      <ul>{friends.map((friend)=><Friend friend={friend} key={friend.id} onSelect={onSelectFriend} selectFriend={selectFriend}/>)}</ul>
     </div>
   )
 }
